@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="w3-container ">
+        <h2 class="w3-center">Actividad de Tareas Con Mongo</h2><hr>
+        <div class="w3-row">
+           
+          
+         <div class="w3-col s4 w3-margin">
+            <h2>Entradas</h2> 
+            <p>
+            <label>Titulo</label>
+            <input class="w3-input" id="titulo" type="text"></p>
+            <p>
+            <label>Descripcion</label>
+           
+            <textarea class="w3-input" name="" id=""  rows="2"></textarea>
+        </p>
+            <p>
+                <button class="w3-button w3-blue">Guardar</button>
+            </p>
+         
+          </form>
+        </div>
+        <div class="w3-col s7 w3-margin">
+        <h2>Mis Tareas</h2>
+        
+      
+        <table class="w3-table w3-bordered">
+            <thead>
+                <tr class="w3-blue">
+                    <th>Titulo</th>
+                    <th>Descripcion</th>
+                    <th>Acciones</th>
+                  </tr>
+            </thead>
+          <tbody>
+            <tr>
+                <td>Jill</td>
+                <td>Smith</td>
+                <td>
+                    <a href="" class="w3-button w3-teal">Activar</a>
+                    <a href="" class="w3-button w3-red" onclick="return confirm('Quieres eliminar este registro?')">Borrar</a>
+                </td>
+              </tr>
+          </tbody>
+          
+        </table>
+        </div>
+      </div>
+    <script>
+        let titulo = document.getElementById("titulo").focus();
+    </script>
+</body>
+</html>

@@ -1,18 +1,18 @@
 const express = require('express');
 const morgan  = require('morgan');
+const con = require('./libs/db-connetion');
+const path = require('path');
 const app = express();
-
+const rutas  = require('./routes/routes')
 let port = process.env.PORT || 9090
+
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine','ejs');
 //usar middleware de morgan para ver las peticiones un mi consola
 app.use(morgan('dev'));
+app.use('/',rutas); 
 
-app.get("/",(req, res)=>{
-    res.send("Welcome");
-})
-app.get("/",(req, res)=>{
-    res.status(200).send("Welcome");
-})
-
+//Lanzar el servidor 
 app.listen(port, function(){
     console.log(`listening on http://127.0.0.1:${port}`);
 });
