@@ -23,7 +23,7 @@ const read = (req,res)=>{
         res.render('index',{
             tareas: data
         })
-        console.log(data);
+        
     })
     .catch(err=>{
         console.log(err);
@@ -70,11 +70,31 @@ const deletes = (req,res)=>{
     .catch(err => {console.log('no se pudo borrar'+err)})
 
 }
+const turn = (req,res) => {
+    let id = req.params.id;
+    Task.findOne({_id:id})
+    .then(data=>{
+       console.log(data.status);
+       console.log(req.body.estado);
+       data.status = !data.status;
+       data.save()
+       .then(()=>{res.redirect('/')});
+    //    if(data.status == true){
+    //     Task.findOneAndUpdate({_id:id},{status:false});
+    //    }
+       
+        
+    })
+    .catch(err=>{
+        console.log(err);
+    })
+}
 
 module.exports = {
     create,
     read,
     readOne,
     update,
-    deletes 
+    deletes,
+    turn 
 }
