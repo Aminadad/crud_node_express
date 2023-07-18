@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="w3-container ">
+        <h2 class="w3-center">Actividad de tareas con Mongodb</h2>
+        <hr>
+        <div class="w3-row">
+
+
+            <div class="w3-col s9 w3-margin">
+                <h2>Entradas</h2>
+                <form class="form" id="form_task" method="post">
+                    <p>
+                        <label>Titulo</label>
+                        <input style="color: red" class="w3-input" name="titulo" id="titulo" type="text" value="<%= data.titulo %>">
+                    </p>
+                    <p>
+                        <label>Descripcion</label>
+
+                        <textarea style="color: red" class="w3-input" name="descripcion" id="" rows="2"><%= data.descripcion %></textarea>
+                    </p>
+                    <p>
+                        <button type="submit" class="w3-button w3-blue">Actualizar</button>
+                    </p>
+
+                </form>
+            </div>
+            <div class="w3-col s3 w3-margin">
+               
+            </div>
+        </div>
+        <script>
+            let titulo = document.getElementById("titulo").focus();
+        </script>
+</body>
+
+</html>

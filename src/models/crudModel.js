@@ -1,5 +1,6 @@
+const {connection} = require('../libs/db-connetion.js');
 const {Schema,model} = require('mongoose');
-
+connection();
 let TaskSchema = Schema({
     titulo:{
         type: String,

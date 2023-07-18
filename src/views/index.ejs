@@ -25,7 +25,7 @@
                     <p>
                         <label>Descripcion</label>
 
-                        <textarea class="w3-input" name="desc" id="" rows="2"></textarea>
+                        <textarea class="w3-input" name="descripcion" id="" rows="2"></textarea>
                     </p>
                     <p>
                         <button type="submit" class="w3-button w3-blue">Guardar</button>
@@ -46,15 +46,18 @@
                         </tr>
                     </thead>
                     <tbody>
+                        <% tareas.forEach((datos)=>{ %>
                         <tr>
-                            <td>Jill</td>
-                            <td>Smith</td>
+                            <td><%= datos.titulo %></td>
+                            <td><%= datos.descripcion %></td>
                             <td>
-                                <a href="" class="w3-button w3-teal">Activar</a>
-                                <a href="" class="w3-button w3-red"
-                                    onclick="return confirm('Quieres eliminar este registro?')">Borrar</a>
+                                <a href="#" class="w3-button w3-circle w3-teal ">Y</a>
+                                <a href="/<%= datos._id %>" class="w3-button w3-circle w3-yellow">U</a>
+                                <a href='/articulo/<%= datos._id %>' class="w3-button w3-circle w3-red "
+                                    onclick="return confirm('Quieres eliminar este registro?')">X</a>
                             </td>
                         </tr>
+                        <% }) %>
                     </tbody>
 
                 </table>
